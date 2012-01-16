@@ -1,13 +1,17 @@
 QuickStart CodeIgniter
+======================
 This project pulls together several popular components to provide a jumpstart when creating your next web application.
 
 Getting Started
+---------------
 Start by loading the database schema into your database schema.sql
 Set $config['sess_use_database'] value to TRUE in /application/config/config.php
 Set $config['encryption_key'] value in /application/config/config.php
 Add your database settings to /application/config/database.php
 Check your settings in /application/config/tank-auth.php
 Check your settings in /application/config/email.php
+
 Future Roadmap
+--------------
 User Role System
 User Profiles
