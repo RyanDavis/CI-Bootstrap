@@ -81,7 +81,7 @@
           <a class="brand" href="/">CI KickStart</a>
           <ul class="nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="welcome/secure">Secure</a></li>
+            <li><a href="/welcome/secure">Secure</a></li>
           </ul>
           <form action="/auth/login" method="post" class="pull-right">
             <input class="input-small" type="text" name="login" maxlength="30" placeholder="Username">
