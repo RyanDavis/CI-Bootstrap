@@ -1,0 +1,16 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Installation directory
+#RewriteBase /var/www/
+
+# Allow these directories and files to be displayed directly:
+# - index.php (DO NOT FORGET THIS!)
+# - robots.txt
+# - favicon.ico
+# - Any file inside of the image/ css/ js/ captcha/ or upload/ directory
+RewriteRule ^(index\.php|robots\.txt|favicon\.ico|schema\.sql|image|css|js|captcha|upload) - [PT,L]
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule .* index.php?/$0 [PT,L,QSA]
+
