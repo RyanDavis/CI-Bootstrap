@@ -6,15 +6,17 @@
           <div class="span10">
 
            <h2>QuickStart CodeIgniter</h2>
-           Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo anchor('/auth/logout/', 'Logout'); ?>
+           Hi, <strong><?=$username?></strong>!<br />
+           Your user role is <?=$role?>.
+	   You are logged in now. <?php echo anchor('/auth/logout/', 'Logout'); ?>
 
           </div>
           <div class="span4">
             <h3>Components</h3>
             <ul>
-              <li>CodeIgniter 2.1.0</li>
-              <li>Tank Auth 1.0.9</li>
-              <li>Bootstrap 1.4.0</li>
+              <li><a href="http://codeigniter.com/">CodeIgniter</a> 2.1.0</li>
+              <li><a href="http://www.konyukhov.com/soft/tank_auth/">Tank Auth</a> 1.0.9</li>
+              <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a> 1.4.0</li>
             </ul>
           </div>
         </div>

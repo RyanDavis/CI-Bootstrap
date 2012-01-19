@@ -11,7 +11,7 @@
  */
 class User_Autologin extends CI_Model
 {
-	private $table_name			= 'user_autologin';
+	private $table_name		= 'user_autologin';
 	private $users_table_name	= 'users';
 
 	function __construct()

@@ -71,6 +71,7 @@ class Tank_auth
 						$this->ci->session->set_userdata(array(
 								'user_id'	=> $user->id,
 								'username'	=> $user->username,
+								'role'          => $this->get_role_name($user->role_id),
 								'status'	=> ($user->activated == 1) ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED,
 						));
 
@@ -113,7 +114,7 @@ class Tank_auth
 		$this->delete_autologin();
 
 		// See http://codeigniter.com/forums/viewreply/662369/ as the reason for the next line
-		$this->ci->session->set_userdata(array('user_id' => '', 'username' => '', 'status' => ''));
+		$this->ci->session->set_userdata(array('user_id' => '', 'username' => '', 'role' => '', 'status' => ''));
 
 		$this->ci->session->sess_destroy();
 	}
@@ -128,6 +129,62 @@ class Tank_auth
 	{
 		return $this->ci->session->userdata('status') === ($activated ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED);
 	}
+
+
+	/**
+         * Get role name from role_id
+         *
+         * @param       string
+         * @param       integer
+         */
+         
+        function get_role_name($role_id='')
+        {
+                if($role_id)
+                {
+                        return $this->ci->users->get_role($role_id);
+                }
+        }
+         
+         
+        /**
+         * get current user's role
+         *
+         * @return      string
+         */
+        
+        function get_role()
+        {
+                return $this->ci->session->userdata('role');
+        }
+        
+        /**
+         * check current user's role
+         *
+         * @param       string
+         * @return      bool
+         */
+        
+        function is_role($role='')
+        {
+                if($role)
+                {
+                        if($this->ci->session->userdata('role') == $role)
+                        {
+                                return TRUE;
+                        }
+                }
+        }
+        
+        function change_role($id,$role) // to change the permissions given to the user
+        {
+                if ($this->tank_auth->is_role('admin')) { // check if admin
+                        if($this->users->change_role($id,$role))
+                        {
+                                return TRUE;
+                        }       
+                }
+        }
 
 	/**
 	 * Get user_id
@@ -567,6 +624,7 @@ class Tank_auth
 						$this->ci->session->set_userdata(array(
 								'user_id'	=> $user->id,
 								'username'	=> $user->username,
+                                                                'role'          => $this->get_role_name($user->role_id),
 								'status'	=> STATUS_ACTIVATED,
 						));
 

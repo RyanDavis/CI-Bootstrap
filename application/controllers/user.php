@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class User extends CI_Controller {
 
 	function __construct()
 	{
@@ -27,23 +27,20 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('sample_content');
-		$this->load->view('footer');
+		redirect('/user/profile');	//redirect to your personal profile
 	}
 
-	public function secure()
+	public function profile()
 	{
 		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
 		} else {
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
-			$data['role']		= $this->tank_auth->get_role();
 			$this->load->view('header');
 			$this->load->view('secure_content', $data);
 			$this->load->view('footer');
-		}
+		}		
 	}
 }
 

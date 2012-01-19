@@ -7,7 +7,7 @@
 
             <h2>QuickStart CodeIgniter</h2>
             <p>This project pulls together several popular components to provide a jumpstart when creating your next web application.</p>
-            <p></p>
+            <p>Read more at <a href="http://weeklybuild.com/2012/01/ci-kickstart-a-web-app-jump-start/">WeeklyBuild.com</a></p>
             <p></p>
             <h3>Getting Started</h3>
             <ol>

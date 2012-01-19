@@ -1,26 +1,13 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
- * Users
- *
- * This model represents user authentication data. It operates the following tables:
- * - user account data,
- * - user profiles
- *
- * @package	Tank_auth
- * @author	Ilya Konyukhov (http://konyukhov.com/soft/)
- */
-class Users extends CI_Model
+class User extends CI_Model
 {
-	private $table_name		= 'users';		// user accounts
-	private $profile_table_name	= 'user_profiles';	// user profiles
-
 	function __construct()
 	{
 		parent::__construct();
 
 		$ci =& get_instance();
-		$this->table_name		= $ci->config->item('db_table_prefix', 'tank_auth').$this->table_name;
+		$this->table_name			= $ci->config->item('db_table_prefix', 'tank_auth').$this->table_name;
 		$this->profile_table_name	= $ci->config->item('db_table_prefix', 'tank_auth').$this->profile_table_name;
 	}
 
@@ -130,18 +117,6 @@ class Users extends CI_Model
 		$data['created'] = date('Y-m-d H:i:s');
 		$data['activated'] = $activated ? 1 : 0;
 
-                if (! array_key_exists('role_id', $data)) 
-                {
-                        if($this->admin_not_present())
-                        {
-                                $data['role_id'] = 1;
-                        }
-                        else
-                        {
-                                $data['role_id'] = $this->default_role();
-                        }
-                }
-
 		if ($this->db->insert($this->table_name, $data)) {
 			$user_id = $this->db->insert_id();
 			if ($activated)	$this->create_profile($user_id);
@@ -149,51 +124,6 @@ class Users extends CI_Model
 		}
 		return NULL;
 	}
-
-        /**
-         * Check if a user with admin role exists
-         *
-         * @return      bool
-         */
-         
-        function admin_not_present()
-        {
-                $this->db->where('role_id', 1);
-                if($this->db->count_all_results($this->table_name) == 0)
-                {
-                        return TRUE;
-                }
-        }
-
-        /**
-         * Get the default role for users
-         *
-         * @return      int
-         */
-         
-        function default_role()
-        {
-                $this->db->where('default', 1);
-                $query = $this->db->get('roles');
-                        
-                $row = $query->row_array();
-                return $row['id'];
-        }
-        
-        /**
-         * Get role for role_id
-         *
-         * @return      string
-         */
-         
-        function get_role($role_id)
-        {
-                $this->db->where('id', $role_id);
-                $query = $this->db->get('roles');
-                        
-                $row = $query->row_array();
-                return $row['role'];
-        }
 
 	/**
 	 * Activate user if activation key is valid.
@@ -448,25 +378,6 @@ class Users extends CI_Model
 	{
 		$this->db->where('user_id', $user_id);
 		$this->db->delete($this->profile_table_name);
-	}
-
-	/**
-	 * Get user profile by Id
-	 *
-	 * @param	int
-	 * @return	object
-	 */
-	function get_user_profile_by_id( $user_id )
-	{
-	}
-	function get_user_profile_by_login( $login )
-	{
-	}
-	function get_user_profile_by_username( $username )
-	{
-	}
-	function get_user_profile_by_email( $email )
-	{
 	}
 }
 
