@@ -20,8 +20,9 @@
             </ol>
             <h3>Future Roadmap</h3>
             <ul>
-              <li>User Role System</li>
+              <li>User Role System - Complete!</li>
               <li>User Profiles</li>
+              <li>Admin System</li>
             </ul>
           </div>
           <div class="span4">
