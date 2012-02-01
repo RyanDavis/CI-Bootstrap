@@ -38,6 +38,7 @@ class User extends CI_Controller {
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
 			$data['role']		= $this->tank_auth->get_role();
+
 			$this->load->view('header');
 			$this->load->view('user/profile', $data);
 			$this->load->view('footer');

@@ -26,11 +26,17 @@
             <li><a href="/welcome/secure">Secure</a></li>
           </ul>
 
+<?php if (!$this->tank_auth->is_logged_in()) { ?>
           <form action="/auth/login" method="post" class="pull-right">
             <input class="input-small" type="text" name="login" maxlength="30" placeholder="Username">
             <input class="input-small" type="password" name="password" placeholder="Password">
             <button class="btn" type="submit">Sign in</button>
           </form>
+<?php }else{ ?>
+          <div class="pull-right">
+            <span style="color:#888;">Logged in as <a href="/user/profile/"><?=$this->tank_auth->get_username()?></a>, <a href="/auth/logout/">Logout</a></span>
+          </div>
+<?php } ?>
         </div>
       </div>
     </div>

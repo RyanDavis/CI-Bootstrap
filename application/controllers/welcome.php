@@ -7,7 +7,6 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 
 		$this->load->helper('url');
-		$this->load->helper('site_info');
 		$this->load->library('tank_auth');
 	}
 
