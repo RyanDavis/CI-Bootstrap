@@ -21,7 +21,7 @@
             <h3>Future Roadmap</h3>
             <ul>
               <li>User Role System - Complete!</li>
-              <li>User Profiles</li>
+              <li>User Profiles - In Progress</li>
               <li>Admin System</li>
             </ul>
           </div>
