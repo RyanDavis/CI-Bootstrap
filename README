@@ -2,6 +2,10 @@ QuickStart CodeIgniter
 ======================
 This project pulls together several popular components to provide a jumpstart when creating your next web application.
 
+Example Page
+---------------
+http://cikickstart.weeklybuild.com
+
 Getting Started
 ---------------
 Start by loading the database schema into your database schema.sql
@@ -12,6 +16,6 @@ Check your settings in /application/config/tank-auth.php
 Check your settings in /application/config/email.php
 
 Future Roadmap
---------------
+---------------
 User Role System
 User Profiles
