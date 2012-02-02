@@ -7,7 +7,7 @@
 | These details are used in emails sent by authentication library.
 |--------------------------------------------------------------------------
 */
-$config['website_name'] = 'CI KickStart';
+$config['website_name'] = 'CI Bootstrap';
 $config['webmaster_email'] = 'ryan@weeklybuild.com';
 
 /*
