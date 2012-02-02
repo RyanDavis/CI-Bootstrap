@@ -4,7 +4,7 @@
         </div>
         <div class="row">
           <div class="span10">
-            <p>Hi, <strong><?php echo $username; ?></strong>! Welcome to your personal profile page.</p>
+            <p>Hi, <strong><?=$username?></strong>! Welcome to your personal profile page.</p>
             <p>Check the right sidebar for your account information.</p>
             <h2>My Feed</h2>
             <ul>
@@ -15,9 +15,11 @@
           <div class="span4">
             <h3>My Account</h3>
             <ul>
+              <li><strong>Gravatar: </strong></li><li style="list-style:none;"><?=gravatar_image( $email )?></li>
               <li><strong>Username: </strong><?=$username?></li>
               <li><strong>User Id: </strong><?=$user_id?></li>
               <li><strong>Account Type: </strong><?=$role?></li>
+              <li><strong>Email: </strong><?=$email?></li>
               <li style="list-style:none;"><?php echo anchor('/user/edit_profile/', 'Edit Profile'); ?></li>
               <li style="list-style:none;"><?php echo anchor('/auth/change_password/', 'Change Password'); ?></li>
               <li style="list-style:none;"><?php echo anchor('/auth/logout/', 'Logout'); ?></li>

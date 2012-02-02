@@ -10,21 +10,6 @@ class User extends CI_Controller {
 		$this->load->library('tank_auth');
 	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		redirect('/user/profile');	//redirect to your personal profile
@@ -38,7 +23,9 @@ class User extends CI_Controller {
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
 			$data['role']		= $this->tank_auth->get_role();
+			$data['email']		= $this->tank_auth->get_email();
 
+			$this->load->helper('gravatar_helper');
 			$this->load->view('header');
 			$this->load->view('user/profile', $data);
 			$this->load->view('footer');

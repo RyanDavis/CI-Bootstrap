@@ -451,22 +451,34 @@ class Users extends CI_Model
 	}
 
 	/**
-	 * Get user profile by Id
+	 * Auth Additions For CIKickStart(Profiles/Admin)
 	 *
 	 * @param	int
 	 * @return	object
 	 */
+	function get_user_list( )
+	{
+		return $this->db->get( 'users' )->result();
+	}
 	function get_user_profile_by_id( $user_id )
 	{
+		$this->db->where( 'id', $user_id );
+		return $this->db->get( 'users' )->result();
 	}
 	function get_user_profile_by_login( $login )
 	{
+		$this->db->where( 'id', $user_id );
+		return $this->db->get( 'users' )->result();
 	}
 	function get_user_profile_by_username( $username )
 	{
+		$this->db->where( 'id', $user_id );
+		return $this->db->get( 'users' )->result();
 	}
 	function get_user_profile_by_email( $email )
 	{
+		$this->db->where( 'id', $user_id );
+		return $this->db->get( 'users' )->result();
 	}
 }
 
