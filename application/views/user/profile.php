@@ -12,7 +12,7 @@
               <li>10/25/2011 - First Post</li>
             </ul>
           </div>
-          <div class="span4">
+          <div class="span2">
             <h3>My Account</h3>
             <ul>
               <li><strong>Gravatar: </strong></li><li style="list-style:none;"><?=gravatar_image( $email )?></li>

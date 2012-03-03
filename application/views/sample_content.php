@@ -25,12 +25,12 @@
               <li>Admin System</li>
             </ul>
           </div>
-          <div class="span4">
+          <div class="span2">
             <h3>Components</h3>
             <ul>
               <li><a href="http://codeigniter.com/">CodeIgniter</a> 2.1.0</li>
               <li><a href="http://www.konyukhov.com/soft/tank_auth/">Tank Auth</a> 1.0.9</li>
-              <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a> 1.4.0</li>
+              <li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a> 2.0</li>
             </ul>
           </div>
         </div>

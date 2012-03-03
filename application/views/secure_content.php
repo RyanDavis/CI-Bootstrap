@@ -11,7 +11,7 @@
 	   You are logged in now. <?php echo anchor('/auth/logout/', 'Logout'); ?>
 
           </div>
-          <div class="span4">
+          <div class="span2">
             <h3>Components</h3>
             <ul>
               <li><a href="http://codeigniter.com/">CodeIgniter</a> 2.1.0</li>
