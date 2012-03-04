@@ -94,12 +94,15 @@ $captcha = array(
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register').' &nbsp; | &nbsp; '; ?>
-			<?php echo anchor('/auth/forgot_password/', 'Forgot Password'); ?>
+		<td>&nbsp;</td>
+		<td colspan="2"><?php echo form_submit('submit', 'Login'); ?></td>
+	</tr>
+	<tr>
+       		<td>
+		<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register').' &nbsp; | &nbsp; '; ?>
+		<?php echo anchor('/auth/forgot_password/', 'Forgot Password'); ?>
 		</td>
-		<td><?php echo form_submit('submit', 'Login'); ?></td>
-		<td></td>
+		<td colspan="2">&nbsp;</td>
 	</tr>
 </table>
 
