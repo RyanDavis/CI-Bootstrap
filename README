@@ -2,10 +2,6 @@ QuickStart CodeIgniter
 ======================
 This project pulls together several popular components to provide a jumpstart when creating your next web application.
 
-Example Page
----------------
-http://cibootstrap.weeklybuild.com
-
 Getting Started
 ---------------
 Start by loading the database schema into your database schema.sql
